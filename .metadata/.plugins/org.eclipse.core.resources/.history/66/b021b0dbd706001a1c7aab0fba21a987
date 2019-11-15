@@ -1,0 +1,18 @@
+package com.bridgelabz.fellowshipprograms.functional;
+
+import java.util.Scanner;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class Array {
+	
+	public static void main(String args[])
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.print("enter a row and column");
+	int i= sc.nextInt();
+	int j=sc.nextInt();
+	Utility.array(i, j);
+	sc.close();
+}
+}

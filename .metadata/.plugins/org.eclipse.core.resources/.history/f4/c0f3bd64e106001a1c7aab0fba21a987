@@ -1,0 +1,19 @@
+package com.bridgelabz.fellowshipprograms.functional;
+
+import java.util.Scanner;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class WindChill {
+	public static void main(String args[])
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter temperature: ");
+		double t=sc.nextDouble();
+		System.out.println("Enter speed of wind: ");
+		double v= sc.nextDouble();
+		Utility.Windchill(t, v);
+		sc.close();
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.bridgelabz.fellowshipprograms.functional;
+
+public class Distance {
+	public static void main(String args[])
+	{
+		Scanner sc= new Scanner(System.in);
+		System.out.print("enter x & y co-ordinates?");
+		int a= sc.nextInt();
+		int b= sc.nextInt();
+		double temp=a*a+b*b;
+		System.out.println("euclidean distance");
+		double d= Math.sqrt(temp);
+		System.out.println("distance: "+d);
+		sc.close();
+	}
+
+}

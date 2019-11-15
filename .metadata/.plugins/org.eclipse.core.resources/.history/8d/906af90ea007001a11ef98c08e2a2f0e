@@ -1,0 +1,11 @@
+package com.bridgelabz.fellowshipprograms.algorithm;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class Primenumber {
+	public static void main(String args[])
+	{
+		Utility.primecheck();
+	}
+
+}

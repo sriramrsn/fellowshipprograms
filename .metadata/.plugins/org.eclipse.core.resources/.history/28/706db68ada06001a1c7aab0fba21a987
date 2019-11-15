@@ -1,0 +1,82 @@
+package com.bridgelabz.fellowshipprograms.logical;
+
+import java.util.Scanner;
+
+public class Tictactoe {
+
+	public static void user(int[][] a)
+	{
+		Scanner sc =new Scanner(System.in);
+		int i= sc.nextInt();
+		int j= sc.nextInt();
+		if(i<3 && j<3)
+		{
+		a[i][j]=0;	
+		}
+		else 
+		{
+			System.out.print("please insert valid position?");
+		}
+	}
+	public static void robo(int[][] a)
+	{
+		int i,j;
+		double temp= Math.random();
+		if(temp<0.25)
+		{
+			 i=0;
+		}else if(temp<0.5)
+		{
+			 i=1;
+		}
+		else {
+			 i=2;
+		}
+		double temp2= Math.random();
+		if(temp2<0.25)
+		{
+			 j=0;
+		}else if(temp2<0.5)
+		{
+			 j=1;
+		}
+		else {
+			 j=2;
+		}
+		a[i][j]=1;
+	}
+	
+	public static void display(int[][] arr,int n)
+	{
+		
+		for(int i=0;i<n;i++)
+		{
+			for(int j=0;j<n;j++)
+			{
+				System.out.print(" | "+arr[i][j]);
+			}
+			System.out.println();
+		}
+		
+	}
+	public static void main(String args[])
+	{
+		Scanner sc =new Scanner(System.in);
+
+		int[][] arr= new int[3][3];
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{	
+				arr[i][j]=-1;
+			
+			}
+		}
+		
+		Tictactoe t= new Tictactoe();
+		t.display(arr,3);
+		t.user(arr);
+		t.display(arr,3);
+	}
+
+}

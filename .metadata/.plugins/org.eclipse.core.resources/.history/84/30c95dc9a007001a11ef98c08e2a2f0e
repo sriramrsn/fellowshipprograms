@@ -1,0 +1,14 @@
+package com.bridgelabz.fellowshipprograms.algorithm;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class Primenumber {
+	public static void main(String args[])
+	{
+		int a[]=new int[];
+		a=Utility.primecheck();
+		System.out.println(""+a);
+		
+	}
+
+}

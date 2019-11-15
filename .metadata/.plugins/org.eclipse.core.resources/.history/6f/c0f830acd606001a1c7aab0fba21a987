@@ -1,0 +1,103 @@
+package com.bridgelabz.fellowshipprograms.utility;
+
+import java.util.Scanner;
+
+public class Utility {
+	public static Scanner sc= new Scanner(System.in);
+	public static void flip(int n)
+	{
+		double head=0,tail=0;
+		for(int i=0;i<n;i++)
+		{
+			double d=Math.random();
+			if(d<0.5)
+			{
+				head++;
+			}
+			else
+			{
+				tail++;
+			}
+		}
+		
+		System.out.println("percentage of head "+100*(head/n));
+		System.out.println("percentage of tail "+100*(tail/n));
+	}
+
+	public static void leap(int n)
+	{
+		if(n%4==0 || n%100!=0 && n%400==0)
+		{
+			System.out.println("it's a leap year");
+			
+		}else 
+			System.out.println("it's not a leap year");
+	}
+	
+	public static void pow(int n)
+	{
+		if(n>=0 && n <31)
+		{
+			double temp= Math.pow(2, n);
+		System.out.println("power "+temp);
+		for(int i=1;i<=n;i++)
+		{
+			double temp1 = 2*i;
+			if(temp1>temp)
+			{
+				System.out.println(""+temp1);
+				break;
+			}
+			else 
+			{ 
+				System.out.println(""+temp1);
+				continue;
+			}
+		}
+		}	
+	}
+	
+	public static void harm(int n)
+	{
+		double temp,sum=0;
+		for(int i=1;i<=n;i++)
+		{
+			temp=1/i;
+			sum=sum+temp;
+		}
+		System.out.println("nth harmonic "+sum);
+	}
+	
+	public static void prime(int n)
+	{
+		for(int i=2;i*i<=n;i++)
+		{
+			while(n%i==0)
+			{
+				System.out.print(""+i);
+				n=n/i;
+			}
+		}
+		if(n>1)
+		{
+			System.out.println(n);
+		}
+		else
+		{
+			System.out.println();
+		}
+	}
+	
+	// functional
+	
+	public static void euclidedistance(double a,double b)
+	{
+		double temp=a*a+b*b;
+		System.out.println("euclidean distance");
+		double d= Math.sqrt(temp);
+		System.out.println("distance: "+d);
+	
+	}
+	
+
+}
