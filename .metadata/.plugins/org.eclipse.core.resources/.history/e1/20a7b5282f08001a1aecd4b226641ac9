@@ -1,0 +1,19 @@
+package com.bridgelabz.fellowshipprograms.algorithm;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class Binarysearch {
+	public static void main(String args[])
+	{
+		char[] a= {'B','G','D','K','P'};
+		char search='B';
+		if(Utility.binarysearch(a, search, 0, a.length)==true);
+		{
+			System.out.println("word is found");
+		}
+		else
+		{
+			System.out.println("word is not found");
+	}
+	}
+}

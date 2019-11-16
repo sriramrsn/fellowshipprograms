@@ -5,7 +5,7 @@ public class Factors {
 	{
 		System.out.println("Enter prime factor");
 		int n=Utility.sc.nextInt();
-		System.out.print("prime factor "+Utility.prime(n));
+		System.out.print("prime factor "+Utility.primeFactor(n));
 	}
 
 }

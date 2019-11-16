@@ -1,0 +1,11 @@
+package com.bridgelabz.fellowshipprograms.algorithm;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class PrimeAnagramPalindrome {
+	public static void main(String args[])
+	{
+		Utility.primeSeries(100);
+	}
+
+}

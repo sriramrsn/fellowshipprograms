@@ -1,0 +1,14 @@
+package com.bridgelabz.fellowshipprograms.algorithm;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class Binarysearch {
+	public static void main(String args[])
+	{
+		char[] a= {'B','G','D','K','P'};
+		char search= 'D';
+		//Utility.binarysearch(a, search, 0, a.length);
+		System.out.println(	Utility.binarysearch(a, search, 0, a.length-1));
+	}
+
+}

@@ -14,7 +14,7 @@ public class WindChill {
 		double v= sc.nextDouble();
 		if(t<50 &&  3<v || v<120)
 		{
-			System.out.println(""+Utility.Windchill(t, v));	
+			System.out.println(""+Utility.windChill(t, v));	
 		}
 		else
 		{

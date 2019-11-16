@@ -9,7 +9,7 @@ public class Flipcoin {
 		Scanner sc= new Scanner(System.in);
 		System.out.println("number of flips of coinns");
 		int n =sc.nextInt();
-		arr=Utility.flipcoin(n);
+		arr=Utility.flipCoin(n);
 	System.out.println("percentage of head"+100*arr[0]/n );
 	System.out.println("percentage of tail"+100*arr[1]/n );
 	}

@@ -11,7 +11,7 @@ public class Distance {
 		System.out.print("enter x & y co-ordinates?");
 		int a= sc.nextInt();
 		int b= sc.nextInt();
-		System.out.println(Utility.euclidedistance(a, b));
+		System.out.println(Utility.euclideDistance(a, b));
 		sc.close();
 	}
 

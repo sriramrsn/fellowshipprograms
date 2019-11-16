@@ -5,7 +5,7 @@ public class Leapyear {
 	{
 		System.out.println("Enter year: ");
 		int y=Utility.sc.nextInt();
-		if(Utility.leapyear(y)==true)
+		if(Utility.leapYear(y)==true)
 		{
 		System.out.println("It is a leap year");                 
 		}

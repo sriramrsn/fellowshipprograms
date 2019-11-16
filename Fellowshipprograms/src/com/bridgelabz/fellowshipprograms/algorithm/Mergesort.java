@@ -1,13 +1,13 @@
 package com.bridgelabz.fellowshipprograms.algorithm;
 
 public class Mergesort {
-	public static void mergesort(int[] a,int lo,int hi)
+	public static void mergeSort(int[] a,int lo,int hi)
 	{
 		if(lo<hi)
 		{
 			int m= (lo+hi)/2;
-			mergesort(a,lo,m);
-			mergesort(a,m+1 ,hi);
+			mergeSort(a,lo,m);
+			mergeSort(a,m+1 ,hi);
 			merge(a,lo,m,hi);
 		}
 	}
@@ -56,7 +56,7 @@ public class Mergesort {
 	public static void main(String args[])
 	{
 		int[]a= {9,3,4,5,1,6,10,8};
-		mergesort(a, 0, a.length-1);
+		mergeSort(a, 0, a.length-1);
 		for(int i=0;i<a.length;i++)
 		{
 			System.out.println(a[i]);

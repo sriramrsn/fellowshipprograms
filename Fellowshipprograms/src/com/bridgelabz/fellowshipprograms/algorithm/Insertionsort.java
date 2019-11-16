@@ -7,7 +7,7 @@ public class Insertionsort {
 	{
 		int a[]= {21,1,12,16,17,18};
 		
-		Utility.insertionsort(a);
+		Utility.insertionSort(a);
 		
 	for(int i=0;i<a.length;i++) {
 			System.out.println(""+a[i]);
