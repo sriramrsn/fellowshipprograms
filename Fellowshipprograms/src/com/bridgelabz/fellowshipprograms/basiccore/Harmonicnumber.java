@@ -4,7 +4,7 @@ public class Harmonicnumber {
 	public static void main(String args[])
 	{		
 		int n =Utility.sc.nextInt();
-	System.out.println(Utility.harmonic(n));
+	System.out.println("Nth harmonic: \n"+Utility.harmonic(n));
 	
 	}
 

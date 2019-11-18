@@ -19,7 +19,7 @@ public class PrimeAnagramPalindrome {
 		{
 			System.out.println(str[i]);
 		}
-		pa=Utility.palindromeAnagram(a);
+		pa=Utility.primePalindrome(a);
 		for(i=0;i<21;i++)
 		{
 			System.out.println(pa[i]);

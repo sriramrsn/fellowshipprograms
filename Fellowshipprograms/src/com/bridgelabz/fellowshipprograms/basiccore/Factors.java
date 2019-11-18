@@ -4,8 +4,8 @@ public class Factors {
 	public static void main(String args[])
 	{
 		System.out.println("Enter prime factor");
-		int n=Utility.sc.nextInt();
-		System.out.print("prime factor "+Utility.primeFactor(n));
+		int n=Utility.readInt();
+		System.out.println("prime factor:"+Utility.primeFactor(n));
 	}
 
 }

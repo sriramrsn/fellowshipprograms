@@ -1,0 +1,30 @@
+package com.bridgelabz.fellowshipprograms.algorithm;
+
+
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class Binarysearch {
+	public static void main(String args[])
+	{
+		String filename ="file.txt";
+		String data="hi,hello,pick,back";
+		String words[]=null;
+		
+		words=Utility.createFile(filename, data);
+		
+		words= Utility.bubbleSortString(words);
+		 System.out.println("Enter a string wnat you to search from the list");
+		String word=Utility.sc.nextLine();
+		int val=Utility.binarySearchString(words, word);
+		if(val>0)
+		{
+			System.out.println("Found ");
+		}
+		else 
+		{
+			System.out.println("not found");
+		}
+	}
+}
+

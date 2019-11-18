@@ -1,0 +1,18 @@
+package com.bridgelabz.fellowshipprograms.basiccore;
+import com.bridgelabz.fellowshipprograms.utility.*;
+public class Factors {
+	public static void main(String args[])
+	{
+		int []a=new int[100];
+		int i=0;
+		System.out.println("Enter prime factor");
+		int n=Utility.sc.nextInt();
+		a=Utility.primeFactor(n);
+		while(i>=0)
+		{
+		System.out.print("prime factor "+a[i]);
+			i++;
+		}
+	}
+	}
+}
