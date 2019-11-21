@@ -32,7 +32,7 @@ public class Sumofintegeraddstozero {
 		{
 	      A[i]  = sc.nextInt();
 	     }
-	 find(A, n, 3);
+	 find(A, n, 0);
 	   sc.close();
 	} 
 }

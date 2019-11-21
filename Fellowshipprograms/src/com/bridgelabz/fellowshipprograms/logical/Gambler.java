@@ -5,15 +5,18 @@ import java.util.Scanner;
 public class Gambler {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-        int stake  = sc.nextInt();    
-        int goal   = sc.nextInt();    
-        int trials = sc.nextInt();   
-        int bets=0;       
+		System.out.println("Enter stack: ");
+        double stake  = sc.nextInt();    
+        System.out.println("Enter goal: ");
+        double goal   = sc.nextInt();    
+        System.out.println("Enter how many trials: ");
+        double trials = sc.nextInt();   
+        double bets=0;       
         int wins = 0;
         int loss=0;
         for (int t = 0; t < trials; t++) 
         {
-            int cash = stake;
+            double cash = stake;
             while (cash > 0 && cash < goal)
             {
                 bets++;

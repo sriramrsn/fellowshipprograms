@@ -9,7 +9,7 @@ public class GenericsforSearchSort {
 	{
 
 		Integer integer_array[] = {5,8,36,7,1,2};
-		String string_array[] = {"asdjfl","khsd","owien","asdljf","wen"};
+		String string_array[] = {"ram","pravin","ravali","kalyan","shiva"};
 		
 		integer_array=Utility.bubbleSortGenerics(integer_array);
 		

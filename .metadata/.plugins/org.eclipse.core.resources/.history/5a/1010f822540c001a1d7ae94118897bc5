@@ -1,0 +1,11 @@
+package com.bridgelabz.fellowshipprograms.junit;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class DecimaltoBinary4byte {
+public static void main(String args[])
+{
+	int n=Utility.readInt();
+	Utility.binary(n);
+}
+}

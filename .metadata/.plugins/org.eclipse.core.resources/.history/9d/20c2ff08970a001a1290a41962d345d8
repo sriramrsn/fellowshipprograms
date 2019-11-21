@@ -1,0 +1,39 @@
+package com.bridgelabz.fellowshipprograms.utility;
+
+public class UtilityLinkedlist {
+	public static node head;
+	public static class node{
+		String data;
+		node next;
+	}
+	public static <T> void insert(T data)
+	{
+		node node=new node();
+		node.data=(String)data;
+		node.next=null;
+		if(head==null)
+		{
+			head=node;
+		}
+		else
+		{
+			node n=head;
+			while(n.next!=null)
+			{
+				n=n.next;
+			}
+			n.next=node;
+		}
+		
+	}
+	public static <E> void show()
+	{
+		node node=head;
+		while(node.next!=null)
+		{
+			System.out.print(node.data+"->");
+			node=node.next;
+		}
+		System.out.print(node.data);
+	}
+}

@@ -1,0 +1,9 @@
+package com.bridgelabz.fellowshipprograms.logical;
+
+public class StopWatch {
+	public static void main(String args[])
+	{
+		double start=System.currentTimeMillis()/1000;
+		System.out.println(start);
+	}
+}

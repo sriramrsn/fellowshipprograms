@@ -1,0 +1,16 @@
+package com.bridgelabz.fellowshipprograms.datastructure;
+
+import com.bridgelabz.fellowshipprograms.utility.Utility;
+
+public class UnOrderedList {
+	public static void main(String[] args) {
+		Utility.add(1);
+		Utility.add("one");
+		Utility.add(2);
+		Utility.add("two");
+		Utility.add(3);
+		Utility.display();
+		
+	}
+
+}

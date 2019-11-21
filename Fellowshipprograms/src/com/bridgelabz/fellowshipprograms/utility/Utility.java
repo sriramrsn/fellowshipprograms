@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -19,6 +18,10 @@ public class Utility {
 	public static int readInt()
 	{
 		return sc.nextInt();
+	}
+	public static String readLine()
+	{
+		return sc.nextLine();
 	}
 
 /*------------------------------Basic_cores-----------------------------------------------*/
@@ -56,9 +59,17 @@ public class Utility {
 	 */
 	public static boolean leapYear(int n)
 	{
-		if(n%4==0 || n%100!=0 && n%400==0)
+		boolean leap=false;
+		if(n%4==0)
 		{
-		return true;		
+			if(n%100==0)
+			{
+				if(n%400==0)
+				{ 
+					return leap=true;
+				}
+				else return leap=false;
+			} else return leap=true;
 		}else 
 		return false;
 	}
@@ -108,7 +119,7 @@ public class Utility {
 		double temp,sum=0;
 		for(int i=1;i<=n;i++)
 		{
-			temp=1/i;
+			temp=1/(double)i;
 			sum=sum+temp;
 		}
 		return sum;
@@ -118,26 +129,28 @@ public class Utility {
 //-----------------------------------------------------------------------------------
 	
 	/**
-	 * purpose-These method checks the input provided i.
+	 * purpose-These method check and display the prime factors of decimal number.
 	 * @param n-decimal number.
-	 * @return -prime factors
 	 */
-	public static int primeFactor(int n)
-	{
-		int i;
-		for( i=2;i*i<=n;i++)
-		{
-			while(n>0)
-			{
-				if(n%i==0)
-				{	
-					n=n/i;	
-				}
-			}	
-		}
-
-		return n;
-	}
+	public static void primeFactors(int n) 
+    { 
+        while (n%2==0) 
+        { 
+            System.out.print(2 + " "); 
+            n = n/2; 
+        } 
+  
+        for (int i = 3; i <= Math.sqrt(n); i=i+2) 
+        { 
+            while (n%i == 0) 
+            { 
+                System.out.print(i + " "); 
+                n = n/i; 
+            } 
+        }
+           if (n > 2) 
+            System.out.print(n); 
+    } 
 
 
 /*----------------------------------functional-----------------------------------------*/
@@ -151,7 +164,7 @@ public class Utility {
 	 * @param number of rows 'm'
 	 * @param number of columns 'n'
 	 */
-	public static void multiplexInteger(Integer[][] a,Integer[][] b, int m,int n)
+ 	public static void multiplexInteger(Integer[][] a,Integer[][] b, int m,int n)
 	{
 		int sum,i,j,k;
 		Integer x[][]=new Integer[m][n];
@@ -287,9 +300,70 @@ public class Utility {
 			double w= 35.74+temp1+temp3*temp4;
 			return w;	
 	}
-	
 
- /*----------------------------Algoritham-----------------------------------------------*/
+	
+/*----------------------------Logical-----------------------------------------------*/
+	
+public static int coupongenerate(int n)
+{
+	int temp=(int)( Math.random()*n);
+	return temp;
+}
+public static int generatedCoupon(int n)
+{
+	int count=0,i=0;
+	int distinct=0;
+	boolean collect[]=new boolean[n];
+	 while(distinct<n)
+	 {
+		 int v=coupongenerate(n);
+		 count++;
+		 if(!collect[v])
+		 {
+			 distinct++;
+			 System.out.println("distinct coupon :"+v);
+			 collect[v]=true;
+		 }
+		/* while(i<n)
+		 {
+			 System.out.println(collect[i]);
+			 i++;
+		 }*/
+	 }
+	return count;
+}
+
+
+
+
+/*public static void run()
+{
+	System.out.println("stop to stopwatch press enter");
+	System.out.println();
+	for(int i=1;i<=minute*60;i++)
+	{
+		if(continueStopWatch)
+		{
+			try {
+				Thread.sleep(1000);
+				System.out.println(""+Thread.currentThread().getName()+""+i););
+			}catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}else
+		{
+			System.out.println(Thread.currentThread().getName()+"End");
+			break;
+		}
+	}
+}
+*/
+
+
+
+
+/*----------------------------Algoritham-----------------------------------------------*/
 	
 	
 	/**
@@ -330,7 +404,6 @@ public class Utility {
 		File myfile = new File(filename);
 		String words[]=null;
 		try {
-			
 				boolean createFile = myfile.createNewFile();
 				if(createFile)
 				{
@@ -364,6 +437,7 @@ public class Utility {
 		}
 		return words;
 	}
+	
 
 //-------------------------------------------------------------------------------------
 	
@@ -629,6 +703,14 @@ public static void merge(int[]a,int lo,int m,int hi)
 }
 
 
+/**
+ * purpose merge the sorted strings in the array format.
+ * @param str strings of array.
+ * @param low initial position on the array.
+ * @param mid middle position on the array.
+ * @param high last position on the array.
+ * @return
+ */
 public static String[] mergeString(String str[],int low,int mid,int high)
 {
 	int size_of_lowstr=(mid-low)+1;
@@ -852,11 +934,12 @@ public static String[] primePalindrome(int a[])
 
 
 //------------------------------------------------------------------------------
-
+	
 
 /**
- * @param str
- * @return
+ * purpose of these method is the enter string is in the proper format in there any special character or numbers in them.
+ * @param string 
+ * @return boolean if true or false
  */
 public static boolean isString(String str)
 {
@@ -864,8 +947,9 @@ public static boolean isString(String str)
 } 
 
 /**
- * @param str
- * @return
+ * purpose the enter string is in the form of numbers or not it will check.
+ * @param string of numbers
+ * @return boolean 
  */
 public static boolean isMobileNumber(String str)
 {
@@ -873,9 +957,10 @@ public static boolean isMobileNumber(String str)
 }
 
 /**
- * @param mat
- * @param str
- * @return
+ * purpose these method replace the <name> to <first><middle><last> name format and etc.
+ * @param mat string where to replace position.
+ * @param str string.
+ * @return string.
  */
 public static String replaceString(Matcher mat,String str)
 {
@@ -886,4 +971,293 @@ public static String replaceString(Matcher mat,String str)
 	}
 	return str1;
 }
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+public static String binary(int decimal)
+{
+	StringBuilder sb=new StringBuilder("");
+	  while(decimal>0)
+	  {
+		  if(decimal%2==0)
+		  {
+			  sb.append(decimal%2);
+			  decimal=decimal/2;
+		  }else
+		  {
+			  sb.append(decimal%2);
+		  		decimal=decimal/2;
+		  }
+	  }	
+	  sb.reverse();
+	  int len=sb.length();
+	  StringBuilder sb2=new StringBuilder("");
+	  for(int i=0;i<32-len;i++)
+	  {
+		  sb2.append('0');
+	  }
+	  return (sb2.append(sb).toString());
+}
+public static int  toSwapNibbles(int decimal)
+{
+	return ((decimal & 0x0F)<<4 | (decimal &0xF0)>>4);
+}
+public static int decimal(String binary)
+{
+	StringBuilder sb=new StringBuilder(binary);
+	sb.reverse();
+	int len =sb.length();
+	int i=0;
+	int res=0;
+	int pow=1;
+	while(i<len)
+	{
+		if(i==0)
+		{
+			pow=1;
+		}else
+		{
+			pow=pow*2;
+		}
+		if((sb.charAt(i))=='1')
+		{
+			res=res+pow;
+		}
+		i++;
+	}
+	return res;
+}
+
+public static boolean power(int decimal)
+{
+	int pow=1;
+	boolean flag=false;
+	while(pow<=decimal)
+	{
+		pow=pow*2;
+		if(pow==decimal)
+		{
+			flag=true;
+			break;
+		}
+	}
+	if(flag)
+	{
+		return true;
+	}else {
+		return false;
+	}
+}
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+public static void find(int l,int n)
+{
+	if(l==n)
+	{
+		System.out.println(""+n);
+	}
+	else
+	{
+	int mid=l+(n-l)/2;
+	System.out.println(l+"-"+mid);
+	
+	System.out.println(mid+1+"-"+n);
+	System.out.println("chose choise");
+	int choice=Utility.readInt();
+	switch(choice)
+	{
+	case 1: 
+			find(l,mid);
+	break;
+	case 2: find(mid+1,n);
+	break;
+	default: System.out.println("Invalid choise");
+	}
+}
+}
+
+/*-------------------------------------DATA STRUCTURE-----------------------------------------------------------------------*/
+
+public static String[] createFiles(String filename,String data)
+{
+	File myfile = new File(filename);
+	String words[]=null;
+	try {
+		
+			boolean createFile = myfile.createNewFile();
+			if(createFile)
+			{
+				System.out.println("New File Successfully created");
+			}else {
+			
+				
+				FileWriter fw = new FileWriter("ulist.txt");
+				fw.write(data);
+				
+				fw.close();
+				
+	
+				FileReader fr = new FileReader(filename);
+			
+				BufferedReader br =  new BufferedReader(fr);
+				
+			
+				String s;
+			
+			
+				while((s=br.readLine())!=null)
+				{
+					words=s.split(",");
+				}
+				br.close();
+			}
+	}catch (Exception e)
+	{
+	
+	}
+	return words;
+}
+ public static  node head;
+public static class  node<T>
+{
+	T data;
+	node next;
+	public node(T x)
+	{
+		data=x;
+		next=null;
+	}
+}
+
+public static <T> void add(T x)
+{
+	node new_node=new node(x);
+	new_node.next=null;
+	if(head==null)
+	{
+		head=new_node;
+	}
+	else
+	{
+		node temp=head;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=new_node;
+	}
+}
+
+public static boolean isEmpty()
+{
+	if(head==null)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+public static <T> boolean search(T x)
+{
+	boolean s=false;
+	if(head==x)
+	{
+		return true;
+	}
+	else
+	{
+		node temp=head;
+		while(temp!=x)
+		{
+			temp=temp.next;
+		}
+		return true;
+	} 
+	
+}
+
+public static <T> int size()
+{
+	int count=0;
+	node temp=head;
+	while(temp!=null)
+	{
+		temp=temp.next;
+		count++;
+	}
+	return count;
+}
+
+public static <E> void append(E x)
+{
+	node temp= new node(x);
+	if(head==null)
+	{
+		head=temp;
+	}else
+	{
+		node p=head;
+		while(p.next!=null)
+		{
+			p=p.next;
+		}
+		p.next=temp;
+	}
+}
+
+public static <T> void insertAt(int position,T x)
+{
+	node n=new node(x);
+	node temp=head;
+	for(int i=0;i<position;i++)
+	{
+		temp=temp.next;
+	}
+	n.next=temp.next;
+	temp.next=n;
+	
+}
+
+public static <T>  void remove(T x)
+{
+	node temp=head,prev=null;
+	node remove_node=new node(x);
+	if(temp==remove_node)
+	{
+		temp=temp.next;
+	}
+	else
+	{
+		while(temp!=remove_node)
+		{
+			temp=temp.next;
+		}
+		if(temp==remove_node)
+		{
+			
+		}
+	}
+}
+
+public static <T> void index(T data)
+{
+	node temp=head;
+	
+}
+
+
+public static <T> void display()
+{
+	node temp=head;
+	while(temp.next!=null)
+	{
+		System.out.print(temp.data+"->");
+		temp=temp.next;
+	}
+	System.out.println(temp.data);
+}
+
 }
