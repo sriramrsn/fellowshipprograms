@@ -1117,11 +1117,24 @@ public static String[] createFiles(String filename,String data)
 	}
 	return words;
 }
- public static  node head;
+
+
+public static  node head;
+
+
+/**
+ * purpose class represent a node which is use to create number of nodes with next node reference.
+ *
+ * @param <T>
+ */
 public static class  node<T>
 {
 	T data;
 	node next;
+	/**
+	 * purpose create node with the reference null.
+	 * @param linked list data.
+	 */
 	public node(T x)
 	{
 		data=x;
@@ -1129,6 +1142,11 @@ public static class  node<T>
 	}
 }
 
+/**
+ * purpose -These method insert a node at the next node of the reference.
+ * @param <T>
+ * @param x is the data.
+ */
 public static <T> void add(T x)
 {
 	node new_node=new node(x);
@@ -1148,6 +1166,10 @@ public static <T> void add(T x)
 	}
 }
 
+/**
+ * purpose-These method checks the list is empty or not. 
+ * @return boolean expression.
+ */
 public static boolean isEmpty()
 {
 	if(head==null)
@@ -1160,25 +1182,31 @@ public static boolean isEmpty()
 	}
 }
 
+/**
+ * purpose of these method is to search element which is present in the list or not.
+ * @param <T>
+ * @param x is the element to be searching.
+ * @return the boolean expression.
+ */
 public static <T> boolean search(T x)
 {
-	boolean s=false;
-	if(head==x)
+	node temp=head;
+	while(temp!=null)
 	{
-		return true;
-	}
-	else
-	{
-		node temp=head;
-		while(temp!=x)
+		if(temp.data.equals(x))
 		{
-			temp=temp.next;
+			return true;
 		}
-		return true;
-	} 
-	
+		temp=temp.next;
+	}
+	return false;
 }
 
+/**
+ * purpose of these method to find the length of the list.
+ * @param <T>
+ * @return length.
+ */
 public static <T> int size()
 {
 	int count=0;
@@ -1191,6 +1219,11 @@ public static <T> int size()
 	return count;
 }
 
+
+/**
+ * @param <E>
+ * @param x
+ */
 public static <E> void append(E x)
 {
 	node temp= new node(x);
@@ -1212,7 +1245,7 @@ public static <T> void insertAt(int position,T x)
 {
 	node n=new node(x);
 	node temp=head;
-	for(int i=0;i<position;i++)
+	for(int i=2;i<position;i++)
 	{
 		temp=temp.next;
 	}
@@ -1224,30 +1257,65 @@ public static <T> void insertAt(int position,T x)
 public static <T>  void remove(T x)
 {
 	node temp=head,prev=null;
-	node remove_node=new node(x);
-	if(temp==remove_node)
+	  if (temp != null && temp.data.equals(x)) 
+      { 
+          head = temp.next;
+          return; 
+      } 
+	  while (temp != null && !temp.data.equals(x)) 
+      { 
+          prev = temp; 
+          temp = temp.next; 
+      }
+	  if (temp == null) return; 
+	 prev.next = temp.next;
+}
+
+public static <T> int index(T x)
+{
+	node temp=head;
+	int count=1;
+	while(temp!=null)
 	{
+		if(temp.data.equals(x))
+		{
+			break;
+		}
 		temp=temp.next;
+		count++;
+	}
+	return count;
+}
+
+public static <T> void pop(T position)
+{
+
+	
+}
+public static <T> T pop()
+{
+	T x=null;
+	if(isEmpty())
+	{
+		System.out.println("list is empty");
 	}
 	else
 	{
-		while(temp!=remove_node)
+		node temp1=head;
+		node prev=temp1;
+		while(temp1.next!=null)
 		{
-			temp=temp.next;
+			prev=temp1;
+			temp1=temp1.next;
 		}
-		if(temp==remove_node)
+		if(prev==temp1)
 		{
-			
+			head=null;
 		}
+		x=(T) temp1.data;
 	}
+	return x;
 }
-
-public static <T> void index(T data)
-{
-	node temp=head;
-	
-}
-
 
 public static <T> void display()
 {
@@ -1259,5 +1327,13 @@ public static <T> void display()
 	}
 	System.out.println(temp.data);
 }
+
+/*-------------------------------------------------------------------------------------------------*/
+
+public static<T> void push(T x)
+{
+	        
+}
+
 
 }
